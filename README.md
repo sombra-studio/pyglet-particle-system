@@ -3,7 +3,6 @@
 Particle Effects for Python with Pyglet using a 2D sprites in a system with physical simulation
 
 |![preview](pyglet-particles.gif)|
-|---|
 | An example using the particles |
 
 ## Dependencies
