@@ -1,6 +1,6 @@
 # pyglet-particle-system
 
-Particle Effects for Python with Pyglet using a 2D sprites and system with physical simulation
+Particle Effects for Python with Pyglet using a 2D sprites in a system with physical simulation
 
 |![preview](pyglet-particles.gif)|
 |---|
