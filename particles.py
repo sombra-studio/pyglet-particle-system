@@ -78,8 +78,7 @@ class Particle:
             (1 - t) * self.settings.start_m + t * self.settings.end_m
         )
         self.state.pos += self.state.v * dt
-        self.sprite.x = self.state.pos[0]
-        self.sprite.y = self.state.pos[1]
+        self.sprite.position = self.state.pos
         for force in forces:
             a = force / self.state.m
             self.state.v += a * dt
@@ -131,10 +130,10 @@ class ParticleSystem:
         new_particles = []
         for i in range(num):
             # if limit was reached break
-            if len(self.particles) == self.max_count:
+            if len(self.particles) + i == self.max_count:
                 break
             sprite = pyglet.sprite.Sprite(self.img, x, y, batch=self.batch)
-            pos = np.array([sprite.x, sprite.y], dtype=float)
+            pos = np.array([x, y], dtype=float)
             v = np.zeros(len(min_start_velocity))
             for i in range(len(min_start_velocity)):
                 v[i] = np.random.uniform(
