@@ -146,6 +146,47 @@ class ParticleSystem:
         self.particles.extend(new_particles)
         return new_particles
 
+    def emit_rect(
+        self, x, y, num, settings, min_start_velocity, max_start_velocity,
+        width=5, height=5
+    ):
+        """
+        Emit particles as rectangles instead of sprites.
+
+        Args:
+            x (float): Position of the emission in the x-axis
+            y (float): Position of the emission in the y-axis
+            num (int): Number of particles to create
+            settings (ParticleSettings): Settings for the particles
+            min_start_velocity (ndarray): Minimum velocity at start (velocity is
+                set randomly between the minimum and maximum)
+            max_start_velocity (ndarray): Maximum velocity at start
+
+        Returns:
+            list[Particles]: The new particles created
+        """
+        creation_time = time.time()
+        new_particles = []
+        for i in range(num):
+            # if limit was reached break
+            if len(self.particles) + i == self.max_count:
+                break
+            rect = pyglet.shapes.Rectangle(
+                x, y, width, height, batch=self.batch
+            );
+            pos = np.array([x, y], dtype=float)
+            v = np.zeros(len(min_start_velocity))
+            for i in range(len(min_start_velocity)):
+                v[i] = np.random.uniform(
+                    min_start_velocity[i], max_start_velocity[i]
+                )
+            state = State(pos, v, settings.start_m)
+            particle = Particle(rect, state, creation_time, settings)
+            new_particles.append(particle)
+        # add new particles to the list
+        self.particles.extend(new_particles)
+        return new_particles
+
     def update(self, dt):
         """
         Update the system after dt seconds have passed
