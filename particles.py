@@ -161,6 +161,8 @@ class ParticleSystem:
             min_start_velocity (ndarray): Minimum velocity at start (velocity is
                 set randomly between the minimum and maximum)
             max_start_velocity (ndarray): Maximum velocity at start
+            width (int): Width of rectangles in pixels
+            height (int): Height of rectangles in pixels
 
         Returns:
             list[Particles]: The new particles created
