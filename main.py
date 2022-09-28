@@ -26,7 +26,7 @@ timer = time.time()
 paused = True
 
 
-window = pyglet.window.Window(width=WIDTH, height=HEIGHT)
+window = pyglet.window.Window(width=WIDTH, height=HEIGHT, vsync=False)
 fps_display = pyglet.window.FPSDisplay(window=window)
 label = pyglet.text.Label(x=10, y=window.height-40)
 paused_label = pyglet.text.Label(
@@ -98,8 +98,7 @@ def on_key_press(symbol, _):
         paused = not paused
 
 
-window.push_handlers(on_key_press=on_key_press)
-
-
-pyglet.clock.schedule_interval(update_particles, REFRESH_RATE)
-pyglet.app.run()
+if __name__ == "__main__":
+    window.push_handlers(on_key_press=on_key_press)
+    pyglet.clock.schedule(update_particles)
+    pyglet.app.run()

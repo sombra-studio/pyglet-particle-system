@@ -78,7 +78,7 @@ class Particle:
             (1 - t) * self.settings.start_m + t * self.settings.end_m
         )
         self.state.pos += self.state.v * dt
-        self.sprite.position = self.state.pos
+        self.sprite.update(x=self.state.pos[0], y=self.state.pos[1])
         for force in forces:
             a = force / self.state.m
             self.state.v += a * dt
