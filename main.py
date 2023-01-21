@@ -44,7 +44,6 @@ emission_x = 480
 emission_y = 500
 
 
-
 def update_particles(dt):
     if paused:
         return
@@ -52,7 +51,7 @@ def update_particles(dt):
     particle_system.update(dt)
     # Move emitter from input
     if keys[key.LEFT]:
-            emission_x -= SPEED_X * dt
+        emission_x -= SPEED_X * dt
     elif keys[key.RIGHT]:
         emission_x += SPEED_X * dt
     if keys[key.UP]:
@@ -79,6 +78,7 @@ def update_particles(dt):
             MIN_START_VEL, MAX_START_VEL
         )
 
+
 @window.event
 def on_draw():
     window.clear()
@@ -96,6 +96,10 @@ def on_key_press(symbol, _):
     global paused
     if symbol == key.SPACE:
         paused = not paused
+    elif symbol == key.S:
+        pyglet.image.get_buffer_manager().get_color_buffer().save(
+            'screenshot.png'
+        )
 
 
 if __name__ == "__main__":
