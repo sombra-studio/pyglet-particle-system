@@ -4,7 +4,7 @@ import numpy as np
 import time
 
 
-from particles import ParticleSystem, ParticleSettings
+from pyglet_particles.particles import ParticleSystem, ParticleSettings
 
 WIDTH = 960
 HEIGHT = 540
