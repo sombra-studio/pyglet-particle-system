@@ -5,7 +5,7 @@ import time
 
 
 # Local modules
-from physics import State
+from pyglet_particles.physics import State
 
 
 @dataclass

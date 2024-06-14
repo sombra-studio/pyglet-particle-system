@@ -14,12 +14,10 @@ To use it you need:
 - pyglet
 - numpy
 
-You can install them by running:
-
-`$ python -m pip install -r requirements.txt`
-
 
 ## Usage
+
+Install the package by running: `pip install .` in this directory.
 
 You can see an example in the file **main.py**, and you can run it like this:
 
