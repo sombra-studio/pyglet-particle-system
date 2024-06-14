@@ -17,9 +17,9 @@ To use it you need:
 
 ## Usage
 
-Install the package by running: `pip install .` in this directory.
+Install the package locally by running: `pip install .` in this directory.
+Or you can use `pip install pyglet_particles`
 
 You can see an example in the file **main.py**, and you can run it like this:
 
 `$ python main.py`
-
