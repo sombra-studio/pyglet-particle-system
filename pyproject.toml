@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pyglet_particles"
+version = "1.0.1"
+dependencies = [
+    "numpy",
+    "pyglet",
+]
+authors = [
+  { name="Sombra Studio" },
+]
+description = ""
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/sombra-studio/pyglet-particle-system"
+Issues = "https://github.com/sombra-studio/pyglet-particle-system/issues"
+
+[tool.setuptools.packages.find]
+exclude = ["main"]
